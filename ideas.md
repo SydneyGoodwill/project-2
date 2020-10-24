@@ -15,3 +15,36 @@
     - options to invite other people/ have a shared task list
 - 3rd Favorite: Online arcade
     - stores high scores, stores initials
+
+
+
+    # App Priorities
+
+    - Chat function: research
+    - User Profiles
+    - Games (could be integrated in chat) routing
+
+
+    # Tasks
+    Diana: research sockets ability to work between web routes / visual of site pages/routes/look
+    Zach: reseach sockets build; understanding/learn by doing
+    Sydney: ChatApp options other than sockets / research simple games to integrate (single player)
+    Neal: research games to integrate
+
+    Backend: entire group
+    - server
+    - databases: user info, game scores, chats saved
+    - socket/chat api
+
+
+    # Last Priorities
+    - Konami Code: easter egg "Play Pal" site
+
+
+    # Meet-ups
+    - about every other day; keeping in touch is important
+        - starting with Sunday 10/25 4pm
+    - Slack questions and progress daily
+
+    
+

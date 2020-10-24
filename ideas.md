@@ -46,5 +46,45 @@
         - starting with Sunday 10/25 4pm
     - Slack questions and progress daily
 
+    # Chat Page
+    - Header with search bar, name of application, and sections to go to your profile, your chats, or games
+    - Chat history with different people on the left for selection
+        - Search section at the top to search for a conversation
+        - Option to archive convo, delete convo, or mark unread
+        - Option to go to user profile?
+    - When a chat is clicked on it opens a page to the right that shows your conversation history with that person
+    - Option to delete a message?
+
+    # Game Page
+
+    ## Main Page
+    - Header with search bar, name of application, and sections to go to your profile, your chats, or games
+    - Game tiles for each game with a buttons to:
+        - play game
+        - see high scores
+        - challenge a friend
+    - expandable side maybe to see your chats, and pop ups to reply to people?
+
+    ## Current Game Playing Page
+    - Header with search bar, name of application, and sections to go to your profile, your chats, or games
+    - Game
+        - Button to restart
+        - Button to quit
+        - Button to challenge a friend
+    - expandable side maybe to see your chats, and pop ups to reply to people?
+
+    ## Game Over Page
+    - Pretty much the same thing as the current game playing page, but just with "Game Over", your score, and then options to quit, restart, see high score board, or challenge friends.
+    - If you made it to the high score board maybe something that says congrats! And then shows you your score and lets you put in your username or initials
+
+    # Profile Page
+    - Header with search bar, name of application, and sections to go to your profile, your chats, or games
+    - Optional Profile Picture
+    - Name, hobbies, about me, friends, from, languages spoken, interested in learning about, etc
+
+    # Search
+    - Allows you to search for games or people by name
+
+
     
 

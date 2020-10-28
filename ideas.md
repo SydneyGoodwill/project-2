@@ -87,4 +87,14 @@
 
 
     
-
+# 10/26/2020
+- talked about Zach's pause button feature on snake game and Neal's chat app
+- iframe research
+- phaser research - Zach
+- explore dev tools facebook - Sydney
+- Set up issues:
+    - database / user authentification: week 14 HW -  Zach
+    - routes js / how our handlebars files might start looking: week 14 HW - Sydney
+    - chat route - continued chat functionality modal possibility; multiple routes? Multiple chat rooms?
+    - game route - iframe technology -- allows game and chat to be on the same screen.
+    - find travel API, search a place/top tourist destinations API

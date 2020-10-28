@@ -13,7 +13,16 @@ app.use(express.json());
 app.use(express.static("public"));
 // We need to use sessions to keep track of our user's login status
 
+const exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
 // Requiring our routes
+
+const routes = require("./routes/routes.js");
+
+app.use(routes);
 
 // Syncing our database and logging a message to the user upon success
 

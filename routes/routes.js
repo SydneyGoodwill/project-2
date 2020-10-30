@@ -17,7 +17,7 @@ router.post("/register", async (req, res) => {
     await db.User.create(req.body);
     res.redirect("/login");
   } catch (err) {
-    res.status(500)
+    res.status(500);
   }
 });
 

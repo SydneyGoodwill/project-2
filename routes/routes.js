@@ -6,4 +6,10 @@ router.get("/", (req, res) => {
   res.render("index");
 });
 
+router.get("/register", async (req, res) => {
+  res.render("register")
+});
+
+
+
 module.exports = router;

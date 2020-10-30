@@ -7,9 +7,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/register", async (req, res) => {
-  res.render("register")
+  res.render("register");
 });
-
-
 
 module.exports = router;

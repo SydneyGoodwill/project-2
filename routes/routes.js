@@ -8,12 +8,14 @@ router.get("/", (req, res) => {
 });
 
 router.get("/register", (req, res) => {
+  console.log(req.body);
+  console.log(db.user);
   res.render("register");
 });
 
 router.post("/register", async (req, res) => {
   try {
-    console.log(req.body);
+    console.log("POST ", req.body);
     await db.User.create(req.body);
     res.redirect("/login");
   } catch (err) {

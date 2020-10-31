@@ -16,24 +16,41 @@ router.get("/games", (req, res) => {
   db;
 });
 
-router.get("/register", (req, res) => {
-  console.log(req.body);
-  console.log(db.user);
-  res.render("register");
+router.get("/register", async (req, res) => {
+  const errors = await req.flash("error");
+  res.render("register", {
+    errors,
+  });
 });
 
 router.post("/register", async (req, res) => {
   try {
     console.log("POST ", req.body);
+    const user = await db.User.findOne({
+      where: { username: req.body.username },
+    });
+    const email = await db.User.findOne({ where: { email: req.body.email } });
+    console.log(user);
+    console.log(email);
+
+    if (user) {
+      req.flash("error", "that username already exists");
+      return res.redirect("/register");
+    }
+    if (email) {
+      req.flash("error", "that email is already registered");
+      return res.redirect("/register");
+    }
     await db.User.create(req.body);
     res.redirect("/login");
   } catch (err) {
-    res.status(500);
+    console.log(err);
+    res.sendStatus(500);
   }
 });
 
-router.get("/login", async (req, res) => {
-  const errors = await req.flash("error");
+router.get("/login", (req, res) => {
+  const errors = req.flash("error");
   res.render("login", {
     errors,
   });

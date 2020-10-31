@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 const db = require("./models");
 const passport = require("passport");
 const authenticateUser = async (email, password, done) => {
+  console.log(email, password);
   const user = await getUserByEmail(email);
   if (user === null) {
     return done(null, false, { message: "No user with that email" });
@@ -14,6 +15,7 @@ const authenticateUser = async (email, password, done) => {
     }
     return done(null, false, { message: "password incorrect" });
   } catch (e) {
+    console.log(e);
     return done(e);
   }
 };

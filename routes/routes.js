@@ -1,9 +1,18 @@
 const express = require("express");
 const db = require("../models");
 const router = express.Router();
+const passport = require("passport");
 
 router.get("/", (req, res) => {
   res.render("index");
+});
+
+router.get("/profile", (req, res) => {
+  res.render("profile");
+});
+
+router.get("/games", (req, res) => {
+  res.render("games");
   db;
 });
 
@@ -23,8 +32,20 @@ router.post("/register", async (req, res) => {
   }
 });
 
-router.get("/login", (req, res) => {
-  res.render("login");
+router.get("/login", async (req, res) => {
+  const errors = await req.flash("error");
+  res.render("login", {
+    errors,
+  });
 });
+
+router.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureFlash: true,
+    failureRedirect: "/login",
+  })
+);
 
 module.exports = router;

@@ -6,6 +6,10 @@ module.exports = function (sequelize, DataTypes) {
     username: DataTypes.STRING,
     email: DataTypes.STRING,
     password: DataTypes.STRING,
+    loggedIn: DataTypes.BOOLEAN,
+    firstName: DataTypes.STRING,
+    lastName: DataTypes.STRING,
+    friendList: DataTypes.INTEGER,
   });
   User.addHook("beforeCreate", (user) => {
     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);

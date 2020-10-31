@@ -3,27 +3,27 @@ const db = require("../models");
 const router = express.Router();
 const passport = require("passport");
 
-router.get("/", (req, res) => {
+router.get("/", checkAuthenticated, (req, res) => {
   res.render("index");
 });
 
-router.get("/profile", (req, res) => {
+router.get("/profile", checkAuthenticated, (req, res) => {
   res.render("profile");
 });
 
-router.get("/games", (req, res) => {
+router.get("/games", checkAuthenticated, (req, res) => {
   res.render("games");
   db;
 });
 
-router.get("/register", async (req, res) => {
+router.get("/register", checkNotAuthenticated, async (req, res) => {
   const errors = await req.flash("error");
   res.render("register", {
     errors,
   });
 });
 
-router.post("/register", async (req, res) => {
+router.post("/register", checkNotAuthenticated, async (req, res) => {
   try {
     console.log("POST ", req.body);
     const user = await db.User.findOne({
@@ -49,20 +49,29 @@ router.post("/register", async (req, res) => {
   }
 });
 
-router.get("/login", (req, res) => {
+router.get("/login", checkNotAuthenticated, (req, res) => {
   const errors = req.flash("error");
   res.render("login", {
     errors,
   });
 });
 
-router.post(
-  "/login",
-  passport.authenticate("local", {
-    successRedirect: "/",
-    failureFlash: true,
-    failureRedirect: "/login",
-  })
-);
+router.post("/login", passport.authenticate("local"), (req, res) => {
+  console.log("hit", req.user);
+  res.redirect(307, "/");
+});
+
+function checkAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect("/login");
+}
+function checkNotAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return res.redirect("/");
+  }
+  next();
+}
 
 module.exports = router;

@@ -5,7 +5,6 @@ const passport = require("./passport-config");
 const flash = require("express-flash");
 const expressSession = require("express-session");
 
-
 // Requiring passport as we've configured it
 
 // Setting up port and requiring models for syncing
@@ -36,30 +35,21 @@ app.set("view engine", "handlebars");
 
 const routes = require("./routes/routes.js");
 
+const server = require("http").createServer(app);
+const io = require("socket.io")(server);
 
+app.use(express.static(__dirname + "/node_modules"));
+app.use(express.static(__dirname + "/views"));
 
-const server = require('http').createServer(app);
-const io = require('socket.io')(server);
-
-
-
-app.use(express.static(__dirname + "/node_modules"))
-app.use(express.static(__dirname + "/views"))
-
-io.on('connection', function (socket){
-
-  socket.on('chat_message', function (data) {
-    console.log('User Message: ', data)
-    socket.emit('new-message', data)
-    socket.broadcast.emit('new-message', data)
-  })
-
-
-
-})
+io.on("connection", (socket) => {
+  socket.on("chat_message", (data) => {
+    console.log("User Message: ", data);
+    socket.emit("new-message", data);
+    socket.broadcast.emit("new-message", data);
+  });
+});
 
 app.use(routes);
-
 
 // Syncing our database and logging a message to the user upon success
 

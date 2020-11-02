@@ -2,8 +2,6 @@ const express = require("express");
 const db = require("../models");
 const bcrypt = require("bcrypt");
 const router = express.Router();
-const passport = require("passport");
-const { request } = require("express");
 
 router.get("/", (req, res) => {
   res.render("index");

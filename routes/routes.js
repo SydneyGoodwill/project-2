@@ -69,6 +69,8 @@ router.post("/login", async (req, res) => {
       const encryptedPassword = user.password;
       bcrypt.compare(password, encryptedPassword, (err, result) => {
         if (result) {
+          user.loggedIn = true;
+          user.save({ fields: ["loggedIn"] });
           res.redirect("/");
         } else {
           req.flash("error", "Email or password is incorrect");

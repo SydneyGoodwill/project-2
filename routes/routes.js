@@ -67,15 +67,20 @@ router.post("/login", async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
     const user = await db.User.findOne({ where: { email: email } });
-    const encryptedPassword = user.password;
-    bcrypt.compare(password, encryptedPassword, (err, result) => {
-      if (result) {
-        res.redirect("/");
-      } else {
-        req.flash("error", "Email or password is incorrect");
-        res.redirect("/login");
-      }
-    });
+    if (user !== null) {
+      const encryptedPassword = user.password;
+      bcrypt.compare(password, encryptedPassword, (err, result) => {
+        if (result) {
+          res.redirect("/");
+        } else {
+          req.flash("error", "Email or password is incorrect");
+          res.redirect("/login");
+        }
+      });
+    } else {
+      req.flash("error", "Email does not exist, please register");
+      res.redirect("/login");
+    }
   } catch (err) {
     console.log(err);
     res.sendStatus(500);

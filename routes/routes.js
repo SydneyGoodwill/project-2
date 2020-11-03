@@ -1,7 +1,7 @@
 const express = require("express");
 const db = require("../models");
+const bcrypt = require("bcrypt");
 const router = express.Router();
-const passport = require("passport");
 
 router.get("/", (req, res) => {
   res.render("index");
@@ -60,22 +60,31 @@ router.get("/login", (req, res) => {
   });
 });
 
-router.post("/login", passport.authenticate("local"), (req, res) => {
-  console.log("hit", req.user);
-  res.redirect(307, "/");
+router.post("/login", async (req, res) => {
+  try {
+    const email = req.body.email;
+    const password = req.body.password;
+    const user = await db.User.findOne({ where: { email: email } });
+    if (user !== null) {
+      const encryptedPassword = user.password;
+      bcrypt.compare(password, encryptedPassword, (err, result) => {
+        if (result) {
+          user.loggedIn = true;
+          user.save({ fields: ["loggedIn"] });
+          res.redirect("/");
+        } else {
+          req.flash("error", "Email or password is incorrect");
+          res.redirect("/login");
+        }
+      });
+    } else {
+      req.flash("error", "Email does not exist, please register");
+      res.redirect("/login");
+    }
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(500);
+  }
 });
-
-// function checkAuthenticated(req, res, next) {
-//   if (req.isAuthenticated()) {
-//     return next();
-//   }
-//   res.redirect("/login");
-// }
-// function checkNotAuthenticated(req, res, next) {
-//   if (req.isAuthenticated()) {
-//     return res.redirect("/");
-//   }
-//   next();
-// }
 
 module.exports = router;

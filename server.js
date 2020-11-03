@@ -42,10 +42,46 @@ app.use(express.static(__dirname + "/node_modules"));
 app.use(express.static(__dirname + "/views"));
 
 io.on("connection", (socket) => {
+  // automatically put the user into chat room 1
+
+  socket.join("room1");
+  socket.room = "room1";
+
+  socket.on("join-room-1", () => {
+    console.log("joined room 1");
+    socket.leave(socket.room);
+    socket.join("room1");
+    socket.room = "room1";
+  });
+
+  socket.on("join-room-2", () => {
+    console.log("joined room 2");
+    socket.leave(socket.room);
+    socket.join("room2");
+    socket.room = "room2";
+  });
+
+  socket.on("join-room-3", () => {
+    console.log("joined room 3");
+    socket.leave(socket.room);
+    socket.join("room3");
+    socket.room = "room3";
+  });
+
+  socket.on("join-room-4", () => {
+    console.log("joined room 4");
+    socket.leave(socket.room);
+    socket.join("room4");
+    socket.room = "room4";
+  });
+
   socket.on("chat_message", (data) => {
-    console.log("User Message: ", data);
-    socket.emit("new-message", data);
-    socket.broadcast.emit("new-message", data);
+    console.log("User Message: ", data, socket.room);
+    io.to(socket.room).emit("new-message", data);
+  });
+
+  socket.on("typing", (data) => {
+    io.to(socket.room).emit("typing", data);
   });
 });
 

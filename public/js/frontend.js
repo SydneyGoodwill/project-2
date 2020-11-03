@@ -1,9 +1,3 @@
-$(".chat-button").click(() => {
-  console.log("click");
-});
-
-console.log("Hello");
-
 const socket = io.connect("http://localhost:8080");
 
 console.log(socket);
@@ -20,5 +14,41 @@ socket.on("new-message", (data) => {
   console.log("new message");
   const chatbubble = $("<p>");
   chatbubble.addClass("chat-bubble");
-  $(".messages").prepend(chatbubble.html(data));
+  $(".messages").append(chatbubble.html(data));
+});
+
+$(".channel-1-button").click(() => {
+  socket.emit("join-room-1");
+});
+
+$(".channel-2-button").click(() => {
+  socket.emit("join-room-2");
+});
+
+$(".channel-3-button").click(() => {
+  socket.emit("join-room-3");
+});
+
+$(".channel-4-button").click(() => {
+  socket.emit("join-room-4");
+});
+
+let timeout;
+
+function timeoutFunction() {
+  socket.emit("typing", false);
+}
+
+$(".input-messages").keyup(() => {
+  socket.emit("typing", "is typing.....");
+  clearTimeout(timeout);
+  timeout = setTimeout(timeoutFunction, 750);
+});
+
+socket.on("typing", (data) => {
+  if (data) {
+    $(".typing").html(data);
+  } else {
+    $(".typing").html("");
+  }
 });

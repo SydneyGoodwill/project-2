@@ -42,7 +42,6 @@ function timeoutFunction() {
 }
 
 $(".input-messages").keyup(() => {
-  typing = true;
   socket.emit("typing", "is typing.....");
   clearTimeout(timeout);
   timeout = setTimeout(timeoutFunction, 750);

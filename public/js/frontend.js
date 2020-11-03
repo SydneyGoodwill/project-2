@@ -34,10 +34,8 @@ $(".channel-4-button").click(() => {
 });
 
 let timeout;
-let typing = false;
 
 function timeoutFunction() {
-  typing = false;
   socket.emit("typing", false);
 }
 

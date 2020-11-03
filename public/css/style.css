@@ -1,13 +1,13 @@
 @media (min-width: 768px) {
-  .list-group {
-    float: left;
-  }
+    .list-group {
+        float: left;
+    }
 }
 html {
-  background: url("/css/map.png") no-repeat;
-  background-size: cover;
-  overflow: auto;
-  background-color: transparent;
+    background: url("/css/map.png") no-repeat;
+    background-size: cover;
+    overflow: auto;
+    background-color: transparent;
 }
 body {
   background-color: transparent;

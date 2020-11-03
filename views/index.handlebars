@@ -1,3 +1,46 @@
+<nav class="navbar navbar-dark bg-dark">
+        <!-- Navbar content -->
+          <form class="form-inline">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          <h1 class="navbar-text" style="color:white">AmalgaNation</h1>
+
+          <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link disabled" href="/" tabindex="-1" aria-disabled="true">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/profile">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/games">Games</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Logout</a>
+            </li>
+          </ul>
+    </nav>
+
+    <ul class="list-group" style="opacity: 0.8;">
+        <li class="list-group-item d-flex justify-content-between align-items-center" style="font-weight: bold;">
+          My AmalgaMates
+          <span class="badge badge-primary badge-pill">3</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Diana Shull
+          <span class="badge badge-success badge-pill" style="margin-left: 1%;">online</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Neal Gerber
+          <span class="badge badge-success badge-pill" style="margin-left: 1%;">online</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Zacharie Lafleur
+          <span class="badge badge-danger badge-pill" style="margin-left: 1%;">offline</span>
+        </li>
+    </ul>
+
 <div class="row" style="margin-top: 0.9%;">
         <div class="col-sm-12">
           <div class="card" style="opacity: 0.8;">
@@ -26,3 +69,9 @@
           </div>
         </div>
       </div>
+
+
+      <!-- JQuery JS -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+      <!-- Code to the JavaScript file with ajax call -->
+      <script src="../public/js/travel-api.js"></script>

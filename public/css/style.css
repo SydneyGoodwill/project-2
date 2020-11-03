@@ -1,21 +1,18 @@
-<style>
-        @media (min-width: 768px) {
-            .list-group {
-                float: left;
-            }
-        }
-        html {
-            background: url("/css/map.png") no-repeat;
-            background-size: cover;
-            overflow: auto;
-            background-color: transparent;
-        }
-        body {
-          background-color: transparent;
-        }
-        .page-header {
-          color: white;
-          margin-top: 0.9%;
-        }
-
-    </style>
+@media (min-width: 768px) {
+  .list-group {
+    float: left;
+  }
+}
+html {
+  background: url("/css/map.png") no-repeat;
+  background-size: cover;
+  overflow: auto;
+  background-color: transparent;
+}
+body {
+  background-color: transparent;
+}
+.page-header {
+  color: white;
+  margin-top: 0.9%;
+}

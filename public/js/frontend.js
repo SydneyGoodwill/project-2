@@ -1,13 +1,14 @@
 const socket = io.connect("http://localhost:8080");
 
 console.log(socket);
+$(".chat-button").click(() => {
+  $(".chat-form").submit((e) => {
+    e.preventDefault();
 
-$("form").submit((e) => {
-  e.preventDefault();
-
-  socket.emit("chat_message", $("#txt").val());
-  $("#txt").val("");
-  return false;
+    socket.emit("chat_message", $("#txt").val());
+    $("#txt").val("");
+    return false;
+  });
 });
 
 socket.on("new-message", (data) => {

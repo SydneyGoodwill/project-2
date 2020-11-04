@@ -4,6 +4,7 @@ const express = require("express");
 const passport = require("./passport-config");
 const flash = require("express-flash");
 const expressSession = require("express-session");
+const db = require("./models");
 
 // Requiring passport as we've configured it
 

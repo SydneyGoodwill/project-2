@@ -12,7 +12,62 @@ html {
 body {
   background-color: transparent;
 }
-.page-header {
-  color: white;
-  margin-top: 0.9%;
+
+/* Header Styling */
+.header {
+  color: white!important;
+}
+
+/* Online Amalgamate Styling */
+.amalgamate-container {
+  opacity: 0.9;
+  margin-top: 20px;
+}
+.my-amalgamates {
+  font-weight: bold;
+}
+.amalgamate {
+  margin-left: 1%;
+}
+
+/* Main Content Styling */
+.main-container {
+  width: 350px;
+  margin: 20px auto;
+  opacity: 0.9;
+  padding: 15px 25px;
+}
+
+.main-container-title {
+ text-align: center;
+}
+
+/* Login Page Styling */
+
+.login-form {
+  text-align: left;
+  height: 100%;
+  width: 100%;
+}
+.login-form div {
+  height: 100%;
+  width: 100%;
+}
+.login-form > .input > label {
+  font-weight: bold;
+  margin: 0px 2px 5px 2px;
+}
+.login-form > .input > input {
+  padding: 5px 10px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.login-form > .submit {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.login-form > .submit > .btn {
+  width: 49%;
+  margin: 0;
 }

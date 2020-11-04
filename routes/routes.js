@@ -20,7 +20,7 @@ router.get("/games/snake", checkNotAuthenticated, (req, res) => {
   res.render("snake");
 });
 
-router.get("/register", checkAuthenticated, async (req, res) => {
+router.get("/register", async (req, res) => {
   const errors = await req.flash("error");
   res.render("register", {
     errors,

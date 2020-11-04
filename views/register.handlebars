@@ -21,32 +21,31 @@
 {{/each}}
 
 <div class="card main-container">
-    <h1 class="main-container-title">Register</h1>
-    <form class="login-form" action="/register" method="POST">
-        <div class="input">
-            <label for="email">Username</label>
-            <br>
-            <input type="text" id="username" name="username" required>
-        </div>
-        <div class="input">
-            <label for="email">Email Address</label>
-            <br>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="input">
-            <label for="password">Password</label>
-            <br>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <div class="submit">
-            <button id="submit-login" class="btn btn-primary" type="submit">Login</button>
-            <a class="btn btn-primary" href="/register" role="button">Register</a>
-        </div>
-    </form>
+  <h1 class="main-container-title">Register</h1>
+  <form class="login-form" action="/register" method="POST">
+    <div class="input">
+      <label for="email">Username</label>
+      <br>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <div class="input">
+      <label for="email">Email Address</label>
+      <br>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="input">
+      <label for="password">Password</label>
+      <br>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <div class="submit">
+      <button id="submit-login" class="btn btn-primary" type="submit">Login</button>
+      <a class="btn btn-primary" href="/register" role="button">Register</a>
+    </div>
+  </form>
 </div>
 
 <script>
-
   $("#submit-register").on("click", function (event) {
     event.preventDefault();
 
@@ -58,5 +57,4 @@
       window.location.href = "/login";
     })
   })
-
 </script>

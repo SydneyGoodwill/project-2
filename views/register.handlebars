@@ -20,40 +20,30 @@
 <p> {{this}} </p>
 {{/each}}
 
-<div class="row">
-  <div class="col-sm-6" style="margin-top: 0.9%;" style="padding:15px;">
-    <div class="card" style="opacity: 0.8;">
-      <div class="card-body">
-        <h1 style="text-align: left;">Register</h1>
-        <form action="/register" method="POST" style="" style="margin: 0 auto;">
-          <div style="">
-            <div class="" style="text-align: left;">
-              <p>
-                <label for="username" style="margin-right: 1%;">Name</label><br>
-                <input type="text" id="username" style="float: left;" name="username" required>
-              </p>
-            </div><br>
-            <div class="" style="text-align: left;">
-              <p>
-                <label for="email" style="margin-right: 1%;">Email</label><br>
-                <input type="email" id="email" style="float: left;" name="email" required>
-              </p>
-            </div><br>
-            <div class="" style="text-align: left;">
-              <p>
-                <label for="password" style="margin-right: 1%;">Password</label><br>
-                <input type="password" id="password" style="float: left;" name="password" required>
-              </p>
-            </div>
-          </div><br>
-          <button type="submit-register" style="float: left;" style="margin-left: 1%;">Register</button>
-          <a href="/login">Login</a>
-        </form>
-      </div>
-    </div>
-  </div>
+<div class="card main-container">
+    <h1 class="main-container-title">Register</h1>
+    <form class="login-form" action="/register" method="POST">
+        <div class="input">
+            <label for="email">Username</label>
+            <br>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="input">
+            <label for="email">Email Address</label>
+            <br>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="input">
+            <label for="password">Password</label>
+            <br>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="submit">
+            <button id="submit-login" class="btn btn-primary" type="submit">Login</button>
+            <a class="btn btn-primary" href="/register" role="button">Register</a>
+        </div>
+    </form>
 </div>
-</form>
 
 <script>
 
@@ -67,7 +57,6 @@
     }).then(function (res) {
       window.location.href = "/login";
     })
-
   })
 
 </script>

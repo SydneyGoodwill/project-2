@@ -13,31 +13,35 @@ body {
   background-color: transparent;
 }
 
-/* Header Styling */
+/* Navbar Styling */
 .header {
   color: white!important;
+  text-align: center;
 }
 
-/* Online Amalgamate Styling */
-.amalgamate-container {
+/* Active Chat Styling */
+.chat-container {
+  width: 250px;
   opacity: 0.9;
   margin-top: 20px;
 }
-.my-amalgamates {
-  font-weight: bold;
+.chatrooms > p {
+  color: red;
 }
 .amalgamate {
   margin-left: 1%;
 }
 
 /* Main Content Styling */
-.main-container {
+.login-container {
   width: 350px;
   margin: 20px auto;
   opacity: 0.9;
   padding: 15px 25px;
 }
-
+.main-container {
+  
+}
 .main-container-title {
  text-align: center;
 }

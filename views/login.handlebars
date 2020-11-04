@@ -1,9 +1,9 @@
 <nav class="navbar navbar-dark bg-dark">
     <!-- Navbar content -->
-    <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+  </form>
     <h1 class="navbar-text header">AmalgaNation</h1>
 
     <ul class="nav justify-content-end">
@@ -20,7 +20,7 @@
 <p class="flash-error"> {{this}} </p>
 {{/each}}
 
-<div class="card main-container">
+<div class="card login-container">
     <h1 class="main-container-title">Login</h1>
     <form class="login-form" action="/login" method="POST">
         <div class="input">
@@ -35,7 +35,7 @@
         </div>
         <div class="submit">
             <button id="submit-login" class="btn btn-primary" type="submit">Login</button>
-            <a class="btn btn-primary" href="/register" role="button">Register</a>
+            <a class="btn btn-secondary" href="/register" role="button">Register</a>
         </div>
     </form>
 </div>

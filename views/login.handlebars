@@ -41,37 +41,37 @@
     </li>
 </ul>
 
-
 {{#each errors}}
 <p> {{this}} </p>
 {{/each}}
 
 <div class="row">
-<div class="col-sm-6" style="margin-top: 0.9%;" style="padding:15px;">
-    <div class="card" style="opacity: 0.8;">
-        <div class="card-body">
-        <h1 style="text-align: left;">Login</h1>
-            <form action="/login" method="POST" style="" style="margin: 0 auto;">
-            <div style="">
-                <div class="" style="text-align: left;">
-                    <p>
-                    <label for="email" style="margin-right: 1%;">Email</label><br>
-                    <input type="email" id="email" style="float: left;" name="email" required>
-                    </p>
-                </div><br>
-                <div class="" style="text-align: left;">
-                    <p>
-                    <label for="password" style="margin-right: 1%;">Password</label><br>
-                    <input type="password" id="password" style="float: left;" name="password" required>
-                    </p>
-                </div>
-            </div><br>
-                <button type="submit-login" style="float: left;" style="margin-left: 1%;">Login</button>
-                <a href="/register">Register</a>
-            </form>
-
+    <div class="col-sm-6" style="margin-top: 0.9%;" style="padding:15px;">
+        <div class="card" style="opacity: 0.8;">
+            <div class="card-body">
+                <h1 style="text-align: left;">Login</h1>
+                <form action="/login" method="POST" style="" style="margin: 0 auto;">
+                    <div style="">
+                        <div class="" style="text-align: left;">
+                            <p>
+                                <label for="email" style="margin-right: 1%;">Email</label><br>
+                                <input type="email" id="email" style="float: left;" name="email" required>
+                            </p>
+                        </div><br>
+                        <div class="" style="text-align: left;">
+                            <p>
+                                <label for="password" style="margin-right: 1%;">Password</label><br>
+                                <input type="password" id="password" style="float: left;" name="password" required>
+                            </p>
+                        </div>
+                    </div><br>
+                    <button type="submit-login" style="float: left;" style="margin-left: 1%;">Login</button>
+                    <a href="/register">Register</a>
+                </form>
+            </div>
         </div>
     </div>
+
 </div>
 </div>
 
@@ -90,7 +90,4 @@ $("#submit-login").on("click", function(event) {
     })
 
 })
-
-
-</script>
->>>>>>> cbf11500abfe9e2020cc35fd4bfca392306b5f60
+</div>

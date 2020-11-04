@@ -11,6 +11,8 @@ const authenticateUser = async (email, password, done) => {
   try {
     console.log(password, email, user);
     if (await bcrypt.compare(password, user.password)) {
+      user.loggedIn = true;
+      user.save({ fields: ["loggedIn"] });
       return done(null, user);
     }
     return done(null, false, { message: "password incorrect" });
@@ -26,6 +28,9 @@ passport.deserializeUser((id, done) => {
 });
 async function getUserByEmail(email) {
   return await db.User.findOne({ where: { email } });
+}
+async function getUserById(id) {
+  return await db.User.findOne({ where: { id } });
 }
 
 module.exports = passport;

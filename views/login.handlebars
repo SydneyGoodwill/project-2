@@ -20,8 +20,6 @@
 <p class="flash-error"> {{this}} </p>
 {{/each}}
 
-
-
 <div class="card main-container">
     <h1 class="main-container-title">Login</h1>
     <form class="login-form" action="/login" method="POST">
@@ -41,3 +39,19 @@
         </div>
     </form>
 </div>
+
+<script>
+    $("#submit-login").on("click", function (event) {
+        event.preventDefault();
+
+        $.post("/login", {
+            email: $("#email").val(),
+            password: $("#password").val()
+        }).then(function (res) {
+            console.log("++++++++++++++++++++++")
+            console.log(res);
+            window.location.href = "/";
+        })
+
+    })
+</script>

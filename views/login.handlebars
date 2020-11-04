@@ -4,72 +4,40 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
-    <h1 class="navbar-text" style="color:white">AmalgaNation</h1>
+    <h1 class="navbar-text header">AmalgaNation</h1>
 
     <ul class="nav justify-content-end">
         <li class="nav-item">
             <a class="nav-link disabled" href="/" tabindex="-1" aria-disabled="true">Login</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="/profile">Profile</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/games">Games</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="/register">Register</a>
         </li>
     </ul>
 </nav>
-
-<ul class="list-group online">
-    <li class="list-group-item d-flex justify-content-between align-items-center" style="font-weight: bold;">
-        My AmalgaMates
-        <span class="badge badge-primary badge-pill">3</span>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-        Diana Shull
-        <span class="badge badge-success badge-pill" style="margin-left: 1%;">online</span>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-        Neal Gerber
-        <span class="badge badge-success badge-pill" style="margin-left: 1%;">online</span>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-        Zacharie Lafleur
-        <span class="badge badge-danger badge-pill" style="margin-left: 1%;">offline</span>
-    </li>
-</ul>
 
 {{#each errors}}
 <p class="flash-error"> {{this}} </p>
 {{/each}}
 
-<div class="row">
-    <div class="col-sm-6" style="margin-top: 0.9%;" style="padding:15px;">
-        <div class="card" style="opacity: 0.8;">
-            <div class="card-body">
-                <h1 style="text-align: left;">Login</h1>
-                <form action="/login" method="POST" style="" style="margin: 0 auto;">
-                    <div style="">
-                        <div class="" style="text-align: left;">
-                            <p>
-                                <label for="email" style="margin-right: 1%;">Email</label><br>
-                                <input type="email" id="email" style="float: left;" name="email" required>
-                            </p>
-                        </div><br>
-                        <div class="" style="text-align: left;">
-                            <p>
-                                <label for="password" style="margin-right: 1%;">Password</label><br>
-                                <input type="password" id="password" style="float: left;" name="password" required>
-                            </p>
-                        </div>
-                    </div><br>
-                    <button type="submit" style="float: left;" style="margin-left: 1%;">Login</button>
-                    <a href="/register">Register</a>
-                </form>
 
-            </div>
+
+<div class="card main-container">
+    <h1 class="main-container-title">Login</h1>
+    <form class="login-form" action="/login" method="POST">
+        <div class="input">
+            <label for="email">Email Address</label>
+            <br>
+            <input type="email" id="email" name="email" required>
         </div>
-    </div>
+        <div class="input">
+            <label for="password">Password</label>
+            <br>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="submit">
+            <button class="btn btn-primary" type="submit">Login</button>
+            <a class="btn btn-primary" href="/register" role="button">Register</a>
+        </div>
+    </form>
 </div>

@@ -1,7 +1,6 @@
 const express = require("express");
 const db = require("../models");
 const passport = require("passport");
-const { check } = require("prettier");
 const router = express.Router();
 
 router.get("/", checkAuthenticated, (req, res) => {

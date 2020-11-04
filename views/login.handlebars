@@ -65,11 +65,29 @@
                             </p>
                         </div>
                     </div><br>
-                    <button type="submit" style="float: left;" style="margin-left: 1%;">Login</button>
+                    <button type="submit-login" style="float: left;" style="margin-left: 1%;">Login</button>
                     <a href="/register">Register</a>
                 </form>
-
             </div>
         </div>
     </div>
+
+</div>
+</div>
+
+<script>
+
+$("#submit-login").on("click", function(event) {
+    event.preventDefault();
+
+    $.post("/login", {
+        email: $("#email").val(),
+        password: $("#password").val() 
+    }).then(function(res) {
+        console.log("++++++++++++++++++++++")
+        console.log(res);
+        window.location.href = "/";
+    })
+
+})
 </div>

@@ -1,34 +1,35 @@
 const express = require("express");
 const db = require("../models");
-const bcrypt = require("bcrypt");
+const passport = require("passport");
 const router = express.Router();
 
-router.get("/", (req, res) => {
+router.get("/", checkAuthenticated, (req, res) => {
   res.render("index");
 });
 
-router.get("/profile", (req, res) => {
+router.get("/profile", checkAuthenticated, (req, res) => {
   res.render("profile");
 });
 
-router.get("/games", (req, res) => {
+router.get("/games", checkAuthenticated, (req, res) => {
   res.render("games");
   db;
 });
 
-router.get("/register", async (req, res) => {
+router.get("/games/snake", checkNotAuthenticated, (req, res) => {
+  res.render("snake");
+});
+
+router.get("/register", checkAuthenticated, async (req, res) => {
   const errors = await req.flash("error");
   res.render("register", {
     errors,
   });
 });
 
-router.get("/games/snake", (req, res) => {
-  res.render("snake");
-});
-
 router.post("/register", async (req, res) => {
   try {
+    console.log("==========================");
     console.log("POST ", req.body);
     const user = await db.User.findOne({
       where: { username: req.body.username },
@@ -46,45 +47,41 @@ router.post("/register", async (req, res) => {
       return res.redirect("/register");
     }
     await db.User.create(req.body);
-    res.redirect("/login");
+    res.sendStatus(200);
   } catch (err) {
     console.log(err);
     res.sendStatus(500);
   }
 });
 
-router.get("/login", (req, res) => {
+router.get("/login", checkNotAuthenticated, (req, res) => {
   const errors = req.flash("error");
   res.render("login", {
     errors,
   });
 });
 
-router.post("/login", async (req, res) => {
-  try {
-    const email = req.body.email;
-    const password = req.body.password;
-    const user = await db.User.findOne({ where: { email: email } });
-    if (user !== null) {
-      const encryptedPassword = user.password;
-      bcrypt.compare(password, encryptedPassword, (err, result) => {
-        if (result) {
-          user.loggedIn = true;
-          user.save({ fields: ["loggedIn"] });
-          res.redirect("/");
-        } else {
-          req.flash("error", "Email or password is incorrect");
-          res.redirect("/login");
-        }
-      });
-    } else {
-      req.flash("error", "Email does not exist, please register");
-      res.redirect("/login");
-    }
-  } catch (err) {
-    console.log(err);
-    res.sendStatus(500);
+router.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+    failureFlash: true,
+  })
+);
+
+function checkAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
   }
-});
+  res.redirect("/login");
+}
+
+function checkNotAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return res.redirect("/");
+  }
+  next();
+}
 
 module.exports = router;

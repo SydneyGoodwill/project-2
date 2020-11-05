@@ -53,11 +53,12 @@ body {
   margin-top: 20px;
   float: left;
 }
-.chatrooms > p {
-  color: red;
+.chatrooms > h5 {
+  margin-top: .5rem;
+  font-weight: bold;
 }
-.amalgamate {
-  margin-left: 1%;
+.chatrooms > p {
+  margin: auto 0;
 }
 
 /* Main Content Styling */
@@ -85,7 +86,7 @@ body {
 .carousel-inner {
   margin: 100 0;
 }
-.card {
+.carousel-card {
   color: #343A40;
   background-color: rgba(255,255,255, 0);
   text-align: center;
@@ -93,16 +94,16 @@ body {
   border: none;
   height: 100%;
 }
-.card-body > .card-title {
+.carousel-card-title {
   font-size: 4rem;
   font-weight: bold;
   align-items: center;
 }
-.card-body > hr {
+.carousel-card-body > hr {
   height: 3px;
   background-color: #15ACDB;
 }
-.card-body > p {
+.carousel-card-body > p {
  font-size: 1.2rem!important;
  margin: 20px 0px 0px 0px!important;
 }

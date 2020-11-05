@@ -1,0 +1,63 @@
+<nav class="navbar navbar-dark bg-dark">
+  <!-- Navbar content -->
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+  <h1 class="navbar-text" style="color:white">AmalgaNation</h1>
+
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link active" href="/profile" tabindex="-1" aria-disabled="true">Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="/">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/games">Games</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/login">Logout</a>
+    </li>
+  </ul>
+</nav>
+
+<ul class="list-group" style="opacity: 0.8;">
+  <li class="list-group-item d-flex justify-content-between align-items-center" style="font-weight: bold;">
+    My AmalgaMates
+    <span class="badge badge-primary badge-pill">3</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Diana Shull
+    <span class="badge badge-success badge-pill" style="margin-left: 1%;">online</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Neal Gerber
+    <span class="badge badge-success badge-pill" style="margin-left: 1%;">online</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Zacharie Lafleur
+    <span class="badge badge-danger badge-pill" style="margin-left: 1%;">offline</span>
+  </li>
+</ul>
+
+
+
+<div class="col-sm-6" style="margin-top: 0.9%">
+  <div class="card" style="opacity: 0.8;">
+    <div class="card-body">
+      <h5 class="card-title">Search A Game Title!</h5>
+      <p class="card-text">Here at AmalgaNation, we love games! Our search games feature allows the user to further
+        explore our mutual love! Search a game title to find out more about it!</p>
+      <form action="/gamesearch" method="POST">
+        <div class="form-group">
+          <input type="text" class="form-control" id="search-game" name="searchgame">
+        </div>
+        <button type="submit" class="btn btn-primary" id="gamesearch-button">Explore</a>
+      </form>
+    </div>
+  </div>
+</div>
+<div>
+  {{card}}
+</div>

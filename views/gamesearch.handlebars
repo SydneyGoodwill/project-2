@@ -46,41 +46,19 @@
  <div class="col-sm-6" style="margin-top: 0.9%">
     <div class="card" style="opacity: 0.8;">
       <div class="card-body">
-        <h5 class="card-title">Travel!</h5>
-        <p class="card-text">With our virtual traveler you can go anywhere from the comfort of home! Type in a country to learn more about it and its culture!</p>
-        <form action="/travel" method="POST">
+        <h5 class="card-title">Search A Game Title!</h5>
+        <p class="card-text">Here at AmalgaNation, we love games! Our search games feature allows the user to further explore our mutual love! Search a game title to find out more about it!</p>
+        <form action="/gamesearch" method="POST">
         <div class="form-group">
-          <input type="text" class="form-control" id="search-country" name="searchcountry">
+          <input type="text" class="form-control" id="search-game" name="searchgame">
         </div>
-        <button type="submit" class="btn btn-primary" id="travel-button">Explore</a>
+        <button type="submit" class="btn btn-primary" id="gamesearch-button">Explore</a>
         </form>
       </div>
     </div>
   </div>
 <div>
-  {{#each news}}
-  <div class="col-sm-6" style="margin-top: 0.9%;">
-    <div class="card" style="opacity: 0.8;">
-      <div class="card-body">
-        <h5 class="card-title">Welcome to, {{name}}!</h5>
-        <p>Native Name: {{nativeName}}</p>
-        <p>Region: {{region}}</p>
-        <p>Capital: {{capital}}</p>
-        <p>currencies: {{currencies}}</p>
-      </div>
-    </div>
-  </div>
-  {{/each}}
+  {{card}}
 </div>
 
 
-<!-- <div>
-  {{#each news}}
-  <h1>Welcome to, {{name}}!</h1>
-  <p>Native Name: {{nativeName}}</p>
-  <p>Region: {{region}}</p>
-  <p>Capital: {{capital}}</p>
-  <p>currencies: {{currencies}}</p>
-
-  {{/each}}
-</div> -->

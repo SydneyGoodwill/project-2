@@ -7,8 +7,8 @@ router.get("/", checkAuthenticated, (req, res) => {
   res.render("index");
 });
 
-router.get("/profile", checkAuthenticated, (req, res) => {
-  res.render("profile");
+router.get("/explore", checkAuthenticated, (req, res) => {
+  res.render("explore");
 });
 
 router.get("/games", checkAuthenticated, (req, res) => {

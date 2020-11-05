@@ -28,20 +28,28 @@
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center chatrooms">
     <p>Gaming</p>
-    <button type="button" class="btn btn-dark gaming-btn">Join</button>
+    <button type="button" class="btn btn-dark channel-1-button">Join</button>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center chatrooms">
     <p>Socialize</p>
-    <button type="button" class="btn btn-dark socialize-btn">Join</button>
+    <button type="button" class="btn btn-dark channel-2-button">Join</button>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center chatrooms">
     <p>Travel</p>
-    <button type="button" class="btn btn-dark travel-btn">Join</button>
+    <button type="button" class="btn btn-dark channel-3-button">Join</button>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center chatrooms">
     <p>Recipes</p>
-    <button type="button" class="btn btn-dark recipes-btn">Join</button>
+    <button type="button" class="btn btn-dark channel-4-button">Join</button>
   </li>
+  <ul class="messages chatroom-messages" id="messages">
+    <div class="typing" id="typing"></div>
+  </ul>
+  <form class="form-inline form chat-form" id="chatForm">
+    <input class="form-control mr-sm-2 input-messages" id="txt" autocomplete="off" autofocus="on"
+      placeholder="Write a message..." />
+    <button class="btn btn-dark chat-button">Send</button>
+  </form>
 </ul>
 
 <div class="card snake-card">
@@ -50,9 +58,10 @@
       <h5 id="score" class="card-title snake-card-title">Score: 0</h5>
       <h5 id="high-score" class="card-title snake-card-title high-score">High Score: 60000</h5>
     </div>
-    <p id="p" class="card-text snake-card-text">Press "P" to start and pause! Use the arrow keys to move the snake! Eat all the foods you can!</p>
+    <p id="p" class="card-text snake-card-text">Press "P" to start and pause! Use the arrow keys to move the snake! Eat
+      all the foods you can!</p>
   </div>
-  <canvas id="game-canvas" width="500" height="300"></canvas>
+  <canvas id="game-canvas" width="600" height="350"></canvas>
 </div>
 
 <script src="/js/snake.js"></script>

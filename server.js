@@ -44,6 +44,7 @@ app.use(express.static(__dirname + "/views"));
 
 io.on("connection", (socket) => {
   // automatically put the user into chat room 1
+  console.log(socket);
 
   socket.join("room1");
   socket.room = "room1";

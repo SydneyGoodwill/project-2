@@ -73,7 +73,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("chat_message", (data) => {
-    console.log(data);
+    console.log(socket.room, data);
     io.to(socket.room).emit("new-message", data);
   });
 

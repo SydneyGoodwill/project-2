@@ -6,18 +6,18 @@
   </form>
   <h1 class="navbar-text" style="color:white">AmalgaNation</h1>
 
-  <ul class="nav justify-content-end">
+  <ul class="nav nav-links justify-content-end">
     <li class="nav-item">
-      <a class="nav-link active" href="/profile" tabindex="-1" aria-disabled="true">Profile</a>
+      <a class="nav-link" href="/">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" href="/">Home</a>
+      <a class="nav-link" href="/explore">Explore</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/games">Games</a>
+      <a class="nav-link active" href="/games">Games</a>
     </li>
     <li class="nav-item">
-      <form action="/logout?_method=DELETE" method="POST">
+      <form class="nav-link" action="/logout?_method=DELETE" method="POST">
         <button id="logoutButton" type="submit">Logout</button>
       </form>
     </li>

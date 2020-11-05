@@ -2,11 +2,11 @@
   <!-- Navbar content -->
   <form class="form-inline search">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+    <button class="btn search-btn my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
   </form>
   <h1 class="navbar-text header">AmalgaNation</h1>
 
-  <ul class="nav justify-content-end">
+  <ul class="nav nav-links justify-content-end">
     <li class="nav-item">
       <a class="nav-link" href="/">Home</a>
     </li>
@@ -17,47 +17,77 @@
       <a class="nav-link active" href="/games">Games</a>
     </li>
     <li class="nav-item">
-      <form action="/logout?_method=DELETE" method="POST">
+      <form class="nav-link" action="/logout?_method=DELETE" method="POST">
         <button id="logoutButton" type="submit">Logout</button>
       </form>
     </li>
   </ul>
 </nav>
-
-<div class="row" style="margin-top: 0.9%;">
-  <div class="col-sm-12">
-    <div class="card" style="opacity: 0.8;">
-      <div class="card-body">
-        <h5 class="card-title">Games</h5>
-        <p class="card-text">Connect with your friends, compare scores, and challenge your opponents in our virtual
-          arcade!</p>
+<ul class="list-group chat-container">
+  <li class="list-group-item d-flex justify-content-between align-items-center chatrooms">
+    <h5>Chatrooms</h5>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center chatrooms">
+    <p>Gaming</p>
+    <button type="button" class="btn btn-dark channel-1-button">Join</button>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center chatrooms">
+    <p>Socialize</p>
+    <button type="button" class="btn btn-dark channel-2-button">Join</button>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center chatrooms">
+    <p>Travel</p>
+    <button type="button" class="btn btn-dark channel-3-button">Join</button>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center chatrooms">
+    <p>Recipes</p>
+    <button type="button" class="btn btn-dark channel-4-button">Join</button>
+  </li>
+  <ul class="messages chatroom-messages" id="messages">
+    <div class="typing" id="typing"></div>
+  </ul>
+  <form class="form-inline form chat-form" id="chatForm">
+    <input class="form-control mr-sm-2 input-messages" id="txt" autocomplete="off" autofocus="on"
+      placeholder="Write a message..." />
+    <button class="btn btn-dark chat-button">Send</button>
+  </form>
+</ul>
+<div class="float-container">
+  <div class="game-container">
+    <div class="card game-card">
+      <a href="/games/snake"><img class="card-img" src="./css/images/snake.png" alt="Card image cap"></a>
+      <div class="card-body game-card-body">
+        <a href="/games/snake">
+          <h5 class="card-title game-card-title">Snake</h5>
+        </a>
+        <p class="card-text">Eat as much food as you can without crashing into yourself or the walls!</p>
       </div>
     </div>
-  </div>
-  <div class="col-sm-6" style="margin-top: 0.9%;">
-    <div class="card" style="opacity: 0.8;">
-      <div class="card-body">
-        <h5 class="card-title">Snake</h5>
-        <p class="card-text">Insert snake game here. This could also serve as a menu if we end up with more than one
-          game, each game would then have its own route that looks similar to this page.</p>
+    <div class="card game-card">
+      <a href="/games/snake"><img class="card-img" src="./css/images/arcade-joystick.jpg" alt="Card image cap"></a>
+      <div class="card-body game-card-body">
+        <a href="/games/snake">
+          <h5 class="card-title game-card-title">On the way!</h5>
+        </a>
+        <p class="card-text">Future games are on the way!</p>
       </div>
     </div>
-  </div>
-  <div class="col-sm-6" style="margin-top: 0.9%">
-    <div class="card" style="opacity: 0.8;">
-      <div class="card-body">
-        <h5 class="card-title">Chat!</h5>
-        <button class="channel-1-button">Main Chat</button>
-        <button class="channel-2-button">Gaming</button>
-        <button class="channel-3-button">Travel</button>
-        <button class="channel-4-button">Lewd</button>
-        <ul class="messages" id="messages"></ul>
-        <div class="typing" id="typing"></div>
-        <form class="form-inline form chat-form" id="chatForm">
-          <input class="input-messages" id="txt" autocomplete="off" autofocus="on"
-            placeholder="type your message here..." />
-          <button class="btn btn-outline-success my-2 my-sm-0 chat-button">Chat Now</button>
-        </form>
+    <div class="card game-card">
+      <a href="/games/snake"><img class="card-img" src="./css/images/arcade-joystick.jpg" alt="Card image cap"></a>
+      <div class="card-body game-card-body">
+        <a href="/games/snake">
+          <h5 class="card-title game-card-title">On the way!</h5>
+        </a>
+        <p class="card-text">Future games are on the way!</p>
+      </div>
+    </div>
+    <div class="card game-card">
+      <a href="/games/snake"><img class="card-img" src="./css/images/arcade-joystick.jpg" alt="Card image cap"></a>
+      <div class="card-body game-card-body">
+        <a href="/games/snake">
+          <h5 class="card-title game-card-title">On the way!</h5>
+        </a>
+        <p class="card-text">Future games are on the way!</p>
       </div>
     </div>
   </div>

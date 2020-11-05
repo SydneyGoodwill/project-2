@@ -1,6 +1,5 @@
 const socket = io.connect("/");
 
-console.log(socket);
 $(".chat-button").click(() => {
   $(".chat-form").submit((e) => {
     e.preventDefault();
@@ -12,26 +11,29 @@ $(".chat-button").click(() => {
 });
 
 socket.on("new-message", (data) => {
-  console.log("new message");
   const chatbubble = $("<p>");
   chatbubble.addClass("chat-bubble");
   $(".messages").append(chatbubble.html(data));
-});
 
-$(".channel-1-button").click(() => {
-  socket.emit("join-room-1");
-});
+  $(".channel-1-button").click(() => {
+    socket.emit("join-room-1");
+    chatbubble.html("");
+  });
 
-$(".channel-2-button").click(() => {
-  socket.emit("join-room-2");
-});
+  $(".channel-2-button").click(() => {
+    socket.emit("join-room-2");
+    chatbubble.html("");
+  });
 
-$(".channel-3-button").click(() => {
-  socket.emit("join-room-3");
-});
+  $(".channel-3-button").click(() => {
+    socket.emit("join-room-3");
+    chatbubble.html("");
+  });
 
-$(".channel-4-button").click(() => {
-  socket.emit("join-room-4");
+  $(".channel-4-button").click(() => {
+    socket.emit("join-room-4");
+    chatbubble.html("");
+  });
 });
 
 let timeout;

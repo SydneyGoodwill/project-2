@@ -8,8 +8,8 @@ router.get("/", checkAuthenticated, (req, res) => {
     res.render("index");
 });
 
-router.get("/profile", checkAuthenticated, (req, res) => {
-    res.render("profile");
+router.get("/explore", checkAuthenticated, (req, res) => {
+  res.render("explore");
 });
 
 router.get("/games", checkAuthenticated, (req, res) => {
@@ -28,16 +28,12 @@ router.get("/register", async(req, res) => {
     });
 });
 
-router.post("/register", async(req, res) => {
-    try {
-        console.log("==========================");
-        console.log("POST ", req.body);
-        const user = await db.User.findOne({
-            where: { username: req.body.username },
-        });
-        const email = await db.User.findOne({ where: { email: req.body.email } });
-        console.log(user);
-        console.log(email);
+router.post("/register", async (req, res) => {
+  try {
+    const user = await db.User.findOne({
+      where: { username: req.body.username },
+    });
+    const email = await db.User.findOne({ where: { email: req.body.email } });
 
         if (user) {
             req.flash("error", "that username already exists");
@@ -53,6 +49,11 @@ router.post("/register", async(req, res) => {
         console.log(err);
         res.sendStatus(500);
     }
+    await db.User.create(req.body);
+    res.sendStatus(200);
+  } catch (err) {
+    res.sendStatus(500);
+  }
 });
 
 router.get("/login", checkNotAuthenticated, (req, res) => {
@@ -141,6 +142,10 @@ router.post("/gamesearch", async(req, res) => {
     } catch (err) { console.log(err) }
 });
 
+router.delete("/logout", (req, res) => {
+  req.logout();
+  res.redirect("login");
+});
 
 function checkAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {

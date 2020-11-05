@@ -1,9 +1,9 @@
 const boardBorder = "black";
 const boardBackground = "white";
-const snakeCol = "lightblue";
-const snakeBorder = "dakblue";
-const foodCol = "lightgreen";
-const foodBorder = "darkgreen";
+const snakeCol = "#15acdb";
+const snakeBorder = "#0E90B8";
+const foodCol = "#E78E3B";
+const foodBorder = "#E87000";
 
 let paused = true;
 
@@ -185,7 +185,7 @@ function moveSnake() {
     // add ten to score
     score += 10;
     // display score
-    document.getElementById("score").innerHTML = score;
+    document.getElementById("score").innerHTML = "Score: " + score;
     // generate new foods
     genFood();
   } else {

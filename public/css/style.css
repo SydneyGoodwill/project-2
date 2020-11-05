@@ -1,7 +1,18 @@
-@media (min-width: 768px) {
-    .list-group {
-        float: left;
-    }
+@media (max-width: 1500px) {
+  .nav-link {
+    padding: 5px;
+  }
+}
+@media (max-width: 1280px) {
+  .search > .form-control {
+    width: 150px!important;
+  }
+  .nav-link {
+    font-size: 0.8rem;
+  }
+  .header {
+    font-size: 1.5rem;
+  }
 }
 html {
     background: url("/css/map.png") no-repeat;
@@ -28,6 +39,9 @@ body {
 .search {
   width: 25%;
 }
+.search > .form-control {
+  max-width: 215px!important;
+}
 .search-btn {
   color: #15ACDB;
   border-color: #15ACDB;
@@ -35,7 +49,7 @@ body {
 .header {
   color: white!important;
   text-align: center;
-  width: 50%;
+  width: 45%;
 }
 .nav-text {
   width: 25%;
@@ -43,9 +57,6 @@ body {
 .nav-link {
   color: #15ACDB;
 }
-
-
-
 /* Active Chat Styling */
 .chat-container {
   width: 20%;
@@ -60,7 +71,6 @@ body {
 .chatrooms > p {
   margin: auto 0;
 }
-
 /* Main Content Styling */
 .login-container {
   width: 350px;
@@ -110,9 +120,7 @@ body {
 .who {
   padding-right: 20px;
 }
-
 /* Login Page Styling */
-
 .login-form {
   text-align: left;
   height: 100%;
@@ -139,4 +147,26 @@ body {
 .login-form > .submit > .btn {
   width: 49%;
   margin: 0;
+}
+/* Snake Game Styling */
+.snake-card {
+  margin: 20px auto;
+  width: 60%;
+  background-color: rgba(255,255,255, 0.9);
+}
+.snake-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.snake-card-text {
+  padding-top: 10px;
+  text-align: center;
+  width: 100%;
+  font-size: 0.8rem;
+}
+#game-canvas {
+  padding: 10px 0 40px 0;
+  width: 80%;
+  margin: 0 auto;
 }

@@ -16,7 +16,7 @@ router.get("/games", checkAuthenticated, (req, res) => {
   db;
 });
 
-router.get("/games/snake", checkNotAuthenticated, (req, res) => {
+router.get("/games/snake", checkAuthenticated, (req, res) => {
   res.render("snake");
 });
 

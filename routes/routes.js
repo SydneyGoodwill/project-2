@@ -29,14 +29,10 @@ router.get("/register", async (req, res) => {
 
 router.post("/register", async (req, res) => {
   try {
-    console.log("==========================");
-    console.log("POST ", req.body);
     const user = await db.User.findOne({
       where: { username: req.body.username },
     });
     const email = await db.User.findOne({ where: { email: req.body.email } });
-    console.log(user);
-    console.log(email);
 
     if (user) {
       req.flash("error", "that username already exists");
@@ -49,7 +45,6 @@ router.post("/register", async (req, res) => {
     await db.User.create(req.body);
     res.sendStatus(200);
   } catch (err) {
-    console.log(err);
     res.sendStatus(500);
   }
 });
@@ -69,6 +64,11 @@ router.post(
     failureFlash: true,
   })
 );
+
+router.delete("/logout", (req, res) => {
+  req.logout();
+  res.redirect("login");
+});
 
 function checkAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {

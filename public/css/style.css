@@ -63,10 +63,27 @@ a:hover {
 .nav-link {
   color: #15ACDB;
 }
+<<<<<<< HEAD
 .nav-link:hover {
   color: #15ACDB;
   font-weight: bolder;
 }
+=======
+#logoutButton {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+
+>>>>>>> main
 /* Active Chat Styling */
 .chat-container {
   width: 20%;

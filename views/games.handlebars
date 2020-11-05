@@ -64,13 +64,18 @@
     <div class="card" style="opacity: 0.8;">
       <div class="card-body">
         <h5 class="card-title">Chat!</h5>
-
-        <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Chat Now</button>
+        <button class="channel-1-button">Main Chat</button>
+        <button class="channel-2-button">Gaming</button>
+        <button class="channel-3-button">Travel</button>
+        <button class="channel-4-button">Lewd</button>
+        <ul class="messages" id="messages">
+          <div class="typing" id="typing"></div>
+        </ul>
+        <form class="form-inline form chat-form" id="chatForm">
+          <input class="input-messages" id="txt" autocomplete="off" autofocus="on"
+            placeholder="type your message here..." />
+          <button class="btn btn-outline-success my-2 my-sm-0 chat-button">Chat Now</button>
         </form>
-
-        <p class="card-text">Insert chat app here.</p>
       </div>
     </div>
   </div>

@@ -1,6 +1,5 @@
 const socket = io.connect("/");
 
-console.log(socket);
 $(".chat-button").click(() => {
   $(".chat-form").submit((e) => {
     e.preventDefault();
@@ -12,7 +11,6 @@ $(".chat-button").click(() => {
 });
 
 socket.on("new-message", (data) => {
-  console.log("new message");
   const chatbubble = $("<p>");
   chatbubble.addClass("chat-bubble");
   $(".messages").append(chatbubble.html(data));

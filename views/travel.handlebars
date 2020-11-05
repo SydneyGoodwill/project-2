@@ -43,48 +43,44 @@
   </li>
 </ul>
 
-<div class="row" style="margin-top: 0.9%;">
-  <div class="col-sm-12">
+ <div class="col-sm-6" style="margin-top: 0.9%">
     <div class="card" style="opacity: 0.8;">
       <div class="card-body">
-        <h5 class="country-name"></h5>
-        <p class="user-name">{{#each news}}</p>
-        <p class="card-text"></p>
+        <h5 class="card-title">Travel!</h5>
+        <p class="card-text">With our virtual traveler you can go anywhere from the comfort of home! Type in a country to learn more about it and its culture!</p>
+        <form action="/travel" method="POST">
+        <div class="form-group">
+          <input type="text" class="form-control" id="search-country" name="searchcountry">
+        </div>
+        <button type="submit" class="btn btn-primary" id="travel-button">Explore</a>
+        </form>
       </div>
     </div>
   </div>
+<div>
+  {{#each news}}
   <div class="col-sm-6" style="margin-top: 0.9%;">
     <div class="card" style="opacity: 0.8;">
       <div class="card-body">
-        <h5 class="card-title">My Messages</h5>
-        <ul>
-          <!-- we can even link to the message per entry; <a href="" target="_blank">Message 1: 10/25/2020"</a> -->
-          <li>Message 1: 10/25/2020, 8:00am</li>
-          <li>Message 2: 10/26/2020, 9:45pm</li>
-          <li>Message 3: 10/27/2020, 10:35pm</li>
-        </ul>
+        <h5 class="card-title">Welcome to, {{name}}!</h5>
+        <p>Native Name: {{nativeName}}</p>
+        <p>Region: {{region}}</p>
+        <p>Capital: {{capital}}</p>
+        <p>currencies: {{currencies}}</p>
       </div>
     </div>
   </div>
-  <div class="col-sm-6" style="margin-top: 0.9%">
-    <div class="card" style="opacity: 0.8;">
-      <div class="card-body">
-        <h5 class="card-title">Chat!</h5>
-        <button class="channel-1-button">Channel 1</button>
-        <button class="channel-2-button">Channel 2</button>
-        <button class="channel-3-button">Channel 3</button>
-        <button class="channel-4-button">Channel 4</button>
-        <ul class="messages" id="messages">
-          <div class="typing" id="typing"></div>
-        </ul>
-        <form class="form-inline form" id="chatForm">
-          <input class="input-messages" id="txt" autocomplete="off" autofocus="on"
-            placeholder="type your message here..." />
-          <button class="btn btn-outline-success my-2 my-sm-0 chat-button">Chat Now</button>
-        </form>
-
-
-      </div>
-    </div>
-  </div>
+  {{/each}}
 </div>
+
+<!-- <div>
+  {{#each news}}
+  <h1>Welcome to, {{name}}!</h1>
+  <p>Native Name: {{nativeName}}</p>
+  <p>Region: {{region}}</p>
+  <p>Capital: {{capital}}</p>
+  <p>currencies: {{currencies}}</p>
+
+  {{/each}}
+</div> -->
+

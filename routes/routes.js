@@ -2,6 +2,7 @@ const express = require("express");
 const db = require("../models");
 const passport = require("passport");
 const router = express.Router();
+const axios = require("axios");
 
 router.get("/", checkAuthenticated, (req, res) => {
   res.render("index");
@@ -45,6 +46,7 @@ router.post("/register", async (req, res) => {
     await db.User.create(req.body);
     res.sendStatus(200);
   } catch (err) {
+    console.log(err);
     res.sendStatus(500);
   }
 });
@@ -64,6 +66,85 @@ router.post(
     failureFlash: true,
   })
 );
+
+router.get("/travel", (req, res) => {
+  res.render("travel");
+});
+
+router.post("/travel", async (req, res) => {
+  try {
+    const country = await req.body.searchcountry;
+    console.log(country);
+    const options = {
+      method: "GET",
+      url: "https://rapidapi.p.rapidapi.com/name/" + country,
+      headers: {
+        "x-rapidapi-key": "58227b4c01msh31c608e79f4eccep1702fajsn305d3ba7aa2e",
+        "x-rapidapi-host": "restcountries-v1.p.rapidapi.com",
+      },
+    };
+
+    axios
+      .request(options)
+      .then((response) => {
+        console.log(response.data);
+        res.render("travel", { news: response.data });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    console.log(country);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+router.get("/gamesearch", (req, res) => {
+  res.render("gamesearch");
+});
+
+router.post("/gamesearch", async (req, res) => {
+  try {
+    const game = await req.body.searchgame;
+    console.log(game);
+    const options = {
+      method: "GET",
+      url: "https://rapidapi.p.rapidapi.com/games/" + game,
+      headers: {
+        "x-rapidapi-key": "58227b4c01msh31c608e79f4eccep1702fajsn305d3ba7aa2e",
+        "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com",
+      },
+    };
+
+    axios
+      .request(options)
+      .then((response) => {
+        console.log(response.data.name);
+        console.log(response.data.description_raw);
+
+        const card = `
+                <div>
+                <div class="col-sm-6" style="margin-top: 0.9%;">
+                  <div class="card" style="opacity: 0.8;">
+                    <div class="card-body">
+                      <h5 class="card-title">Gamed Title:${response.data.name}</h5>
+                      <p>Description: ${response.data.description_raw}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>`;
+
+        res.render.innerHTML = card;
+        res.render("gamesearch", { card });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    console.log(game);
+  } catch (err) {
+    console.log(err);
+  }
+});
 
 router.delete("/logout", (req, res) => {
   req.logout();

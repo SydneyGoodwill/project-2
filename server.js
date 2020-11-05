@@ -4,6 +4,7 @@ const express = require("express");
 const passport = require("./passport-config");
 const flash = require("express-flash");
 const expressSession = require("express-session");
+const methodOverride = require("method-override");
 
 // Requiring passport as we've configured it
 
@@ -24,6 +25,7 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(methodOverride("_method"));
 app.use(flash());
 // We need to use sessions to keep track of our user's login status
 
@@ -49,35 +51,30 @@ io.on("connection", (socket) => {
   socket.room = "room1";
 
   socket.on("join-room-1", () => {
-    console.log("joined room 1");
     socket.leave(socket.room);
     socket.join("room1");
     socket.room = "room1";
   });
 
   socket.on("join-room-2", () => {
-    console.log("joined room 2");
     socket.leave(socket.room);
     socket.join("room2");
     socket.room = "room2";
   });
 
   socket.on("join-room-3", () => {
-    console.log("joined room 3");
     socket.leave(socket.room);
     socket.join("room3");
     socket.room = "room3";
   });
 
   socket.on("join-room-4", () => {
-    console.log("joined room 4");
     socket.leave(socket.room);
     socket.join("room4");
     socket.room = "room4";
   });
 
   socket.on("chat_message", (data) => {
-    console.log("User Message: ", data, socket.room);
     io.to(socket.room).emit("new-message", data);
   });
 

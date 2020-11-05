@@ -1,3 +1,62 @@
-# project-2
+# AmalgaNation
 
-Readme yeah
+## Table of Contents
+1. [ Project Links ](#links)
+2. [ Description ](#description)
+3. [ Screenshots ](#screenshots)
+4. [ Credits ](#credits)
+5. [ Challenges and Learning ](#challenges/learning)
+6. [ License ](#license)
+
+<a name = "links"></a>
+
+### 1. Project Links
+
+#### Deployed Site
+
+The deployed site can be found here at [AmalgaNation](https://fast-woodland-71053.herokuapp.com/)
+
+<a name = "description"></a>
+
+### 2. Description
+
+AmalgaNation is a plethora of things all combined into one easy to use website. Create your profile today and get gaming with the entire world! Hang around and chat with people or check out some amazing locations to visit and whats new in the gaming world! This is a website designed to allow people to feel more closely connected. Hang out with all your PlayPals here at Amalganation!
+
+<a name = "screenshots"></a>
+
+### 3. Screenshots
+
+
+
+
+<a name = "credits"></a>
+
+### 4. Credits
+
+This project could never have been completed without all the helping hands and feets we've had throughout the project.
+This is a list of all the sources we used to complete this project!
+
+1. [Socket.io](https://socket.io/)
+2. [A site for easy to make JS games](https://www.ansoriweb.com/2020/03/javascript-game.html)
+3. [Gimp a nice and free image editing software!](https://www.gimp.org/)
+
+<a name = "challenges/learning"></a>
+
+### 5. Challenges and Learning
+
+These are all the things we had a hard time with and the things each of us learned along the way.
+
+Diana - 
+
+Neal - 
+
+Sydney - For our project, my 1) Challenges were: relearning axios calls and then having them render data to handlebars files successfully has been tricky. I was able to successfully render to our travel.handlebars, but the gamesearch.handlebars is still giving me issues. Other challenges included routing earlier on, which we were able to figure out as a group during class with Mason's help for the most part. 2) Successes were: HTML and CSS come way more naturally for me; I was easily able to set up our initial handlebars files and got them connected to their routes. I also finally had success last night with a working travel api!
+
+Zach - 
+
+
+<a name = "license"></a>
+
+### 6. License
+
+These are how many licenses you can fit into this bad boi *slaps the readme file*

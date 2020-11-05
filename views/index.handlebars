@@ -1,77 +1,137 @@
 <nav class="navbar navbar-dark bg-dark">
   <!-- Navbar content -->
-  <form class="form-inline">
+  <form class="form-inline search">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <button class="btn search-btn my-2 my-sm-0 " type="submit">Search</button>
   </form>
 
   <h1 class="navbar-text header">AmalgaNation</h1>
 
   <ul class="nav justify-content-end">
     <li class="nav-item">
-      <a class="nav-link disabled" href="/" tabindex="-1" aria-disabled="true">Home</a>
+      <a class="nav-link active" href="/">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" href="/profile">Profile</a>
+      <a class="nav-link" href="/explore">Explore</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="/games">Games</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/login">Logout</a>
+      <form action="/logout?_method=DELETE" method="POST">
+        <button id="logoutButton" type="submit">Logout</button>
+      </form>
     </li>
   </ul>
 </nav>
 
-<ul class="list-group amalgamate-container">
-  <li class="list-group-item d-flex justify-content-between align-items-center my-amalgamates">
-    My AmalgaMates
-    <span class="badge badge-primary badge-pill">3</span>
+<ul class="list-group chat-container">
+  <li class="list-group-item d-flex justify-content-between align-items-center chatrooms">
+    <h5>Chatrooms</h5>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    Diana Shull
-    <span class="badge badge-success badge-pill amalgamate">online</span>
+    <p>Gaming</p>
+    <button type="button" class="btn btn-dark gaming-btn">Join</button>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    Neal Gerber
-    <span class="badge badge-success badge-pill amalgamate">online</span>
+    <p>Socialize</p>
+    <button type="button" class="btn btn-dark socialize-btn">Join</button>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    Zacharie Lafleur
-    <span class="badge badge-danger badge-pill amalgamate">offline</span>
+    <p>Travel</p>
+    <button type="button" class="btn btn-dark travel-btn">Join</button>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <p>Recipes</p>
+    <button type="button" class="btn btn-dark recipes-btn">Join</button>
   </li>
 </ul>
 
-<div class="row" style="margin-top: 0.9%;">
-  <div class="col-sm-12">
-    <div class="card" style="opacity: 0.8;">
-      <div class="card-body">
-        <h5 class="card-title">Home</h5>
-        <p class="card-text">Welcome to the AmalgaNation! Your hub for connecting with people from all over the world,
-          from the comfort of home! Join a chat, play a game, explore!</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6" style="margin-top: 0.9%;">
-    <div class="card" style="opacity: 0.8;">
-      <div class="card-body">
-        <h5 class="card-title">Gaming News</h5>
-        <p class="card-text">click here for some of the latest news in the gaming world.</p>
-        <a href="#" class="btn btn-primary">Explore</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6" style="margin-top: 0.9%">
-    <div class="card" style="opacity: 0.8;">
-      <div class="card-body">
-        <h5 class="card-title">Travel News</h5>
-        <p class="card-text">click here for some of the latest travel information and visitor guides.</p>
-        <a href="#" class="btn btn-primary">Explore</a>
-      </div>
-    </div>
-  </div>
-</div>
 
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item main active">
+      <div class="card-deck">
+        <div class="card">
+          <img class="card-img" src="./css/images/girl-with-orange-shirt.jpg" alt="Card image cap">
+        </div>
+        <div class="card">
+          <img class="card-img" src="./css/images/girls-on-stairs.jpg" alt="Card image cap">
+        </div>
+        <div class="card">
+          <img class="card-img" src="./css/images/girl-with-glasses.jpg" alt="Card image cap">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">AMALGANATION</h2>
+          <hr>
+          <p>FRIENDSHIPS AROUND THE WORLD AT YOUR FINGERTIPS</p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="card">
+        <div class="row">
+          <div class="col-md-6 who">
+            <div class="card-body">
+              <h2 class="card-title">WHO ARE WE</h2>
+              <hr>
+              <p class="card-text justify-text">Our goal is to help people from across the world continue to meet new people during the worldwide pandemic. You can play games, meet people from different cultures, and socialize - all from the comfort of your own home!</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <img src="./css/images/guys-by-water.jpg" class="card-img" alt="...">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item what">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">WHAT DO WE DO</h2>
+          <hr>
+        </div>
+      </div>
+      <div class="card-deck">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title"><i class="fas fa-comments"></i></h2>
+            <p class="bold">Chat Rooms</p>
+            <p>Chat and meet people from across the world, all at the comfort and safety of your own home!</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title"><i class="fas fa-gamepad"></i></h2>
+            <p class="bold">Gaming</p>
+            <p>Challenge your friends to beat your high-score!</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title"><i class="fas fa-globe-americas"></i></h2>
+            <p class="bold">Culture</p>
+            <p>Learn about different countries, cultures, and recipes by chatting with people from across the world!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 
 <!-- JQuery JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.js"

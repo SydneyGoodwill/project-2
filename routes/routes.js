@@ -8,8 +8,8 @@ router.get("/", checkAuthenticated, (req, res) => {
   res.render("index");
 });
 
-router.get("/profile", checkAuthenticated, (req, res) => {
-  res.render("profile");
+router.get("/explore", checkAuthenticated, (req, res) => {
+  res.render("explore");
 });
 
 router.get("/games", checkAuthenticated, (req, res) => {
@@ -21,23 +21,19 @@ router.get("/games/snake", checkNotAuthenticated, (req, res) => {
   res.render("snake");
 });
 
-router.get("/register", async(req, res) => {
+router.get("/register", async (req, res) => {
   const errors = await req.flash("error");
   res.render("register", {
     errors,
   });
 });
 
-router.post("/register", async(req, res) => {
+router.post("/register", async (req, res) => {
   try {
-    console.log("==========================");
-    console.log("POST ", req.body);
     const user = await db.User.findOne({
       where: { username: req.body.username },
     });
     const email = await db.User.findOne({ where: { email: req.body.email } });
-    console.log(user);
-    console.log(email);
 
     if (user) {
       req.flash("error", "that username already exists");
@@ -75,7 +71,7 @@ router.get("/travel", (req, res) => {
   res.render("travel");
 });
 
-router.post("/travel", async(req, res) => {
+router.post("/travel", async (req, res) => {
   try {
     const country = await req.body.searchcountry;
     console.log(country);
@@ -107,7 +103,7 @@ router.get("/gamesearch", (req, res) => {
   res.render("gamesearch");
 });
 
-router.post("/gamesearch", async(req, res) => {
+router.post("/gamesearch", async (req, res) => {
   try {
     const game = await req.body.searchgame;
     console.log(game);
@@ -148,6 +144,11 @@ router.post("/gamesearch", async(req, res) => {
   } catch (err) {
     console.log(err);
   }
+});
+
+router.delete("/logout", (req, res) => {
+  req.logout();
+  res.redirect("login");
 });
 
 function checkAuthenticated(req, res, next) {

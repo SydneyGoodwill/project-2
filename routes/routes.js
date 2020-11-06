@@ -67,11 +67,7 @@ router.post(
   })
 );
 
-router.get("/travel", (req, res) => {
-  res.render("travel");
-});
-
-router.post("/travel", async (req, res) => {
+router.post("/explore", async (req, res) => {
   try {
     const country = await req.body.searchcountry;
     const apiKey = process.env.APP_API_KEY_TRAVEL;
@@ -89,7 +85,7 @@ router.post("/travel", async (req, res) => {
       .request(options)
       .then((response) => {
         console.log(response.data);
-        res.render("travel", { news: response.data });
+        res.render("explore", { news: response.data });
       })
       .catch((error) => {
         console.error(error);

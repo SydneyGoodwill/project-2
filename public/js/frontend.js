@@ -1,39 +1,35 @@
 const socket = io.connect("/");
 
-$(".chat-button").click(() => {
-  $(".chat-form").submit((e) => {
-    e.preventDefault();
+$(".chat-button").click((e) => {
+  e.preventDefault();
 
-    socket.emit("chat_message", $("#txt").val());
-    $("#txt").val("");
-    return false;
-  });
+  socket.emit("chat_message", $("#txt").val());
+  $("#txt").val("");
+  return false;
 });
 
 socket.on("new-message", (data) => {
-  const chatbubble = $("<p>");
-  chatbubble.addClass("chat-bubble");
-  $(".messages").append(chatbubble.html(data));
+  $(".messages").append($("<p>").html(data));
+});
 
-  $(".channel-1-button").click(() => {
-    socket.emit("join-room-1");
-    chatbubble.html("");
-  });
+$(".channel-1-button").click(() => {
+  socket.emit("join-room-1");
+  $(".messages").html("");
+});
 
-  $(".channel-2-button").click(() => {
-    socket.emit("join-room-2");
-    chatbubble.html("");
-  });
+$(".channel-2-button").click(() => {
+  socket.emit("join-room-2");
+  $(".messages").html("");
+});
 
-  $(".channel-3-button").click(() => {
-    socket.emit("join-room-3");
-    chatbubble.html("");
-  });
+$(".channel-3-button").click(() => {
+  socket.emit("join-room-3");
+  $(".messages").html("");
+});
 
-  $(".channel-4-button").click(() => {
-    socket.emit("join-room-4");
-    chatbubble.html("");
-  });
+$(".channel-4-button").click(() => {
+  socket.emit("join-room-4");
+  $(".messages").html("");
 });
 
 let timeout;

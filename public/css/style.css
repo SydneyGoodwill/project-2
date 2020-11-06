@@ -222,6 +222,7 @@ a:hover {
 }
 .game-card > img {
   width: 100%;
+  object-fit: cover;
 }
 .game-card-title {
   text-align: center;

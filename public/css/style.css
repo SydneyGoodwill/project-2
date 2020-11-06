@@ -236,3 +236,9 @@ a:hover {
 .game-card-body > p {
   font-size: 0.8rem;
 }
+/* Explore Page Styling */
+.explore-card {
+  margin: 20px auto;
+  width: 60%;
+  background-color: rgba(255,255,255, 0.9);
+}

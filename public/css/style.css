@@ -187,6 +187,12 @@ a:hover {
   width: 49%;
   margin: 0;
 }
+.btn-primary {
+  background-color: #15ACDB;
+}
+.active {
+  color: grey;
+}
 /* Snake Game Styling */
 .snake-card {
   margin: 20px auto;

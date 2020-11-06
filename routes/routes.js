@@ -70,12 +70,13 @@ router.post(
 router.post("/explore", async (req, res) => {
   try {
     const country = await req.body.searchcountry;
+    const apiKey = process.env.APP_API_KEY_TRAVEL;
     console.log(country);
     const options = {
       method: "GET",
       url: "https://rapidapi.p.rapidapi.com/name/" + country,
       headers: {
-        "x-rapidapi-key": "58227b4c01msh31c608e79f4eccep1702fajsn305d3ba7aa2e",
+        "x-rapidapi-key": apiKey,
         "x-rapidapi-host": "restcountries-v1.p.rapidapi.com",
       },
     };
@@ -102,12 +103,13 @@ router.get("/gamesearch", (req, res) => {
 router.post("/gamesearch", async (req, res) => {
   try {
     const game = await req.body.searchgame;
+    const apiKey = process.env.APP_API_KEY_GAMES;
     console.log(game);
     const options = {
       method: "GET",
       url: "https://rapidapi.p.rapidapi.com/games/" + game,
       headers: {
-        "x-rapidapi-key": "58227b4c01msh31c608e79f4eccep1702fajsn305d3ba7aa2e",
+        "x-rapidapi-key": apiKey,
         "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com",
       },
     };

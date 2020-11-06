@@ -103,6 +103,7 @@ router.get("/gamesearch", (req, res) => {
 router.post("/gamesearch", async (req, res) => {
   try {
     const game = await req.body.searchgame;
+    const apiKey = process.env.APP_API_KEY_GAMES;
     console.log(game);
     const options = {
       method: "GET",

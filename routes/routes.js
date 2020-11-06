@@ -109,7 +109,7 @@ router.post("/gamesearch", async (req, res) => {
       method: "GET",
       url: "https://rapidapi.p.rapidapi.com/games/" + game,
       headers: {
-        "x-rapidapi-key": "58227b4c01msh31c608e79f4eccep1702fajsn305d3ba7aa2e",
+        "x-rapidapi-key": apiKey,
         "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com",
       },
     };

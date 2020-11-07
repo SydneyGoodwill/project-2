@@ -26,7 +26,7 @@ AmalgaNation is a plethora of things all combined into one easy to use website. 
 
 ### 3. Screenshots
 
-
+![Home page](./public/css/images/frontpage.jpg)
 
 
 <a name = "credits"></a>
@@ -46,7 +46,7 @@ This is a list of all the sources we used to complete this project!
 
 These are all the things we had a hard time with and the things each of us learned along the way.
 
-Diana - 
+Diana - I worked mostly on styling, which doesn't come naturally to me. My biggest struggles were trying to find ways to make our pages seem uniform and aesthetically appealing. I think through this project I learned to love styling more than I previously did, which I view as a success!
 
 Neal - 
 

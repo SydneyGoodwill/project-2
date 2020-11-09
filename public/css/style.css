@@ -1,7 +1,18 @@
-@media (min-width: 768px) {
-    .list-group {
-        float: left;
-    }
+@media (max-width: 1550px) {
+  .nav-link {
+    padding: 5px;
+  }
+}
+@media (max-width: 1280px) {
+  .search > .form-control {
+    width: 150px!important;
+  }
+  .nav-link, #logoutButton {
+    font-size: 0.8rem;
+  }
+  .header {
+    font-size: 1.5rem;
+  }
 }
 html {
     background: url("/css/map.png") no-repeat;
@@ -24,53 +35,81 @@ body {
 .height-100 {
   height: 100%;
 }
+a:hover {
+  text-decoration: none;
+}
 /* Navbar Styling */
 .search {
   width: 25%;
+}
+.search > .form-control {
+  max-width: 215px!important;
 }
 .search-btn {
   color: #15ACDB;
   border-color: #15ACDB;
 }
+.search-btn:hover {
+  background-color: #15ACDB;
+}
 .header {
   color: white!important;
   text-align: center;
-  width: 50%;
+  width: 45%;
 }
-.nav-text {
+.nav-links {
   width: 25%;
 }
-.nav-link {
+.nav-link, #logoutButton {
   color: #15ACDB;
 }
-#logoutButton {
-  background: none!important;
-  border: none;
-  padding: 0!important;
-  /*optional*/
-  font-family: arial, sans-serif;
-  /*input has OS specific font-family*/
-  color: #069;
-  text-decoration: underline;
-  cursor: pointer;
+.nav-link:hover, #logoutButton:hover {
+  color: #15ACDB;
+  font-weight: bolder;
 }
-
-
-
+#logoutButton {
+  padding: 0;
+  background-color: rgba(255,255,255, 0);
+  color: #15ACDB;
+  border: none;
+}
+#logoutButton:hover {
+  font-weight: bolder;
+}
 /* Active Chat Styling */
 .chat-container {
   width: 20%;
-  opacity: 0.9;
+  background-color: rgba(255,255,255, 0.9);
   margin-top: 20px;
   float: left;
 }
+.list-group-item {
+  background-color: rgba(255,255,255, 0);
+}
+.chatrooms > h5 {
+  margin-top: .5rem;
+  font-weight: bold;
+}
 .chatrooms > p {
-  color: red;
+  margin: auto 0;
 }
-.amalgamate {
-  margin-left: 1%;
+.chatroom-messages {
+  height: 250px;
+  font-size: 0.8rem;
+  padding: 20px;
+  word-wrap: break-word;
+  overflow: auto;
+  max-height: 100%;
 }
-
+.chat-form {
+  padding: 20px;
+}
+.chat-form > .input-messages {
+  width: 70%;
+}
+.chat-button {
+  width: 25%;
+}
 /* Main Content Styling */
 .login-container {
   width: 350px;
@@ -96,7 +135,7 @@ body {
 .carousel-inner {
   margin: 100 0;
 }
-.card {
+.carousel-card {
   color: #343A40;
   background-color: rgba(255,255,255, 0);
   text-align: center;
@@ -104,25 +143,23 @@ body {
   border: none;
   height: 100%;
 }
-.card-body > .card-title {
+.carousel-card-title {
   font-size: 4rem;
   font-weight: bold;
   align-items: center;
 }
-.card-body > hr {
+.carousel-card-body > hr {
   height: 3px;
   background-color: #15ACDB;
 }
-.card-body > p {
+.carousel-card-body > p {
  font-size: 1.2rem!important;
  margin: 20px 0px 0px 0px!important;
 }
 .who {
   padding-right: 20px;
 }
-
 /* Login Page Styling */
-
 .login-form {
   text-align: left;
   height: 100%;
@@ -149,4 +186,65 @@ body {
 .login-form > .submit > .btn {
   width: 49%;
   margin: 0;
+}
+.btn-primary {
+  background-color: #15ACDB;
+}
+.active {
+  color: grey;
+}
+/* Snake Game Styling */
+.snake-card {
+  margin: 20px auto;
+  width: 60%;
+  background-color: rgba(255,255,255, 0.9);
+}
+.snake-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.snake-card-text {
+  padding-top: 10px;
+  text-align: center;
+  width: 100%;
+  font-size: 0.8rem;
+}
+#game-canvas {
+  padding: 10px 0 40px 0;
+  width: 80%;
+  margin: 0 auto;
+}
+/* Game Page Styling */
+.game-container {
+  width: 100%;
+}
+.game-card {
+  margin: 20px 0px 0px 1.5%;
+  width: 18%;
+  height: 80%;
+  background-color: rgba(255,255,255, 0.9);
+  float: left;
+}
+.game-card > img {
+  width: 100%;
+  object-fit: cover;
+}
+.game-card-title {
+  text-align: center;
+  color: #15ACDB;
+}
+.game-card-title:hover {
+  color: #15ACDB;
+  font-weight: bolder;
+  letter-spacing: 3px;
+}
+.game-card-body > p {
+  font-size: 0.8rem;
+}
+/* Explore Page Styling */
+.explore-card {
+  margin: 20px auto;
+  width: 60%;
+  background-color: rgba(255,255,255, 0.9);
 }

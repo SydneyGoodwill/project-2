@@ -45,8 +45,6 @@ app.use(express.static(__dirname + "/node_modules"));
 app.use(express.static(__dirname + "/views"));
 
 io.on("connection", (socket) => {
-  // automatically put the user into chat room 1
-
   socket.join("room1");
   socket.room = "room1";
 
@@ -75,6 +73,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("chat_message", (data) => {
+    console.log(socket.room, data);
     io.to(socket.room).emit("new-message", data);
   });
 

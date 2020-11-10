@@ -52,7 +52,7 @@ Neal -
 
 Sydney - For our project, my 1) Challenges were: relearning axios calls and then having them render data to handlebars files successfully has been tricky. I was able to successfully render to our travel.handlebars, but the gamesearch.handlebars is still giving me issues. Other challenges included routing earlier on, which we were able to figure out as a group during class with Mason's help for the most part. 2) Successes were: HTML and CSS come way more naturally for me; I was easily able to set up our initial handlebars files and got them connected to their routes. I also finally had success last night with a working travel api!
 
-Zach - 
+Zach - Through this project I was able to learn a lot about Canvas (in HTML) as well as socket.io, passport-session, and so much more. I had a bit of a rough time with flash when it came to using handlebars too. Handlebars doesnt have very good functionality with flash but I was able to learn a bit about EJS too. I think I was able to pick up lots of little skills here and there and learn some pretty cool stuff about cookies an how to use them in way that can benefit the user. Being able to allow a user to login and logout was a pretty challenging endevour but not as difficult as getting route protections. I think that was probably the coolest thing I was able to learn.
 
 
 <a name = "license"></a>

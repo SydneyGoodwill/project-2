@@ -48,7 +48,7 @@ These are all the things we had a hard time with and the things each of us learn
 
 Diana - I worked mostly on styling, which doesn't come naturally to me. My biggest struggles were trying to find ways to make our pages seem uniform and aesthetically appealing. I think through this project I learned to love styling more than I previously did, which I view as a success!
 
-Neal - 
+Neal - I tackled working with sockets. Sockets is a completely new to me node library that allows for data to be sent from the application direclty to the backend and then be broadcast immediatley out to the application. Sockets allowed us to create a live chat in our application. It was challenging for me to completley learn a new technology and learning how it was going to be implemented into our project. I initially created a functioning web chat in my code sandbox but as I discovered when I went to move that over to our application things often didn't work as they did in practice. Overall I had a lot of fun troubleshooting these issues and discovering how to make sockets run on heroku.
 
 Sydney - My challenges were: relearning axios calls and then having them render data to handlebars files successfully. I was able to successfully render to our travel.handlebars, but the gamesearch.handlebars is still giving me issues. Other challenges included routing earlier on, which we were able to figure out as a group during class with Mason's help for the most part. 2) Successes were: HTML and CSS come way more naturally for me; I was easily able to set up our initial handlebars files and got them connected to their routes. I also finally had success last night with a working travel api! Our gaming api is something I'd like to implement with future development.
 
